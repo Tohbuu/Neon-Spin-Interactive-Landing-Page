@@ -270,4 +270,72 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 200);
         });
     }, 5000);
+    
+    // Video Player Functionality
+    const video = document.getElementById('gameplay-video');
+    const playBtn = document.getElementById('play-btn');
+    const muteBtn = document.getElementById('mute-btn');
+    const fullscreenBtn = document.getElementById('fullscreen-btn');
+    const videoOverlay = document.querySelector('.video-overlay');
+    
+    // Play/Pause functionality
+    playBtn.addEventListener('click', function() {
+        if (video.paused) {
+            video.play();
+            videoOverlay.classList.add('hidden');
+            playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+        } else {
+            video.pause();
+            videoOverlay.classList.remove('hidden');
+            playBtn.innerHTML = '<i class="fas fa-play"></i>';
+        }
+    });
+    
+    // Show controls on video hover
+    video.addEventListener('mouseenter', function() {
+        if (!video.paused) {
+            videoOverlay.style.opacity = '0.8';
+            videoOverlay.style.pointerEvents = 'auto';
+        }
+    });
+    
+    video.addEventListener('mouseleave', function() {
+        if (!video.paused) {
+            videoOverlay.style.opacity = '0';
+            videoOverlay.style.pointerEvents = 'none';
+        }
+    });
+    
+    // Video ended event
+    video.addEventListener('ended', function() {
+        videoOverlay.classList.remove('hidden');
+        playBtn.innerHTML = '<i class="fas fa-play"></i>';
+    });
+    
+    // Mute/Unmute functionality
+    muteBtn.addEventListener('click', function() {
+        if (video.muted) {
+            video.muted = false;
+            muteBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+        } else {
+            video.muted = true;
+            muteBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+        }
+    });
+    
+    // Fullscreen functionality
+    fullscreenBtn.addEventListener('click', function() {
+        if (video.requestFullscreen) {
+            video.requestFullscreen();
+        } else if (video.webkitRequestFullscreen) {
+            video.webkitRequestFullscreen();
+        } else if (video.msRequestFullscreen) {
+            video.msRequestFullscreen();
+        }
+    });
+    
+    // Click on video to play/pause
+    video.addEventListener('click', function() {
+        playBtn.click();
+    });
 });

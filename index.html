@@ -80,7 +80,7 @@
                 <div class="about-content">
                     <div class="about-text">
                         <p>Neon Spin is the ultimate cyberpunk slot machine experience, blending retro-futuristic aesthetics with cutting-edge gameplay mechanics.</p>
-                        <p>Born in the digital underworld of 2089, our slots offer more than just gambling - they're a lifestyle for the chrome-plated generation.</p>
+                        <p>Born in the digital underworld, our slots offer more than just gambling - they're a lifestyle for the chrome-plated generation.</p>
                         <div class="stats">
                             <div class="stat-item">
                                 <div class="stat-number" data-count="25">0</div>
@@ -160,11 +160,27 @@
                 </div>
                 <div class="gameplay-content">
                     <div class="gameplay-video">
-                        <div class="video-placeholder">
-                            <div class="play-button">
-                                <i class="fas fa-play"></i>
+                        <div class="video-container">
+                            <video id="gameplay-video" preload="metadata" poster="assets/video-poster.jpg">
+                                <source src="assets/gameplay-video.mp4" type="video/mp4">
+                                <source src="assets/gameplay-video.webm" type="video/webm">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="video-overlay">
+                                <div class="play-button" id="play-btn">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                                <div class="video-controls">
+                                    <div class="control-btn" id="mute-btn">
+                                        <i class="fas fa-volume-up"></i>
+                                    </div>
+                                    <div class="control-btn" id="fullscreen-btn">
+                                        <i class="fas fa-expand"></i>
+                                    </div>
+                                </div>
                             </div>
                             <div class="scanlines"></div>
+                            <div class="neon-border-video"></div>
                         </div>
                     </div>
                     <div class="gameplay-text">
@@ -190,7 +206,7 @@
             </div>
         </section>
 
-        <section class="testimonials">
+        <!-- <section class="testimonials">
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title glitch" data-text="PLAYER VOICES">PLAYER <span class="neon-text">VOICES</span></h2>
@@ -232,7 +248,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
         <section class="contact" id="contact">
             <div class="container">
@@ -243,8 +259,8 @@
                 <div class="contact-content">
                     <div class="contact-info">
                         <h3>CONNECT WITH THE UNDERWORLD</h3>
-                        <p><i class="fas fa-envelope"></i> spin@neonunderworld.com</p>
-                        <p><i class="fas fa-key"></i> Encrypted Comms: N3ON-SP1N-2089</p>
+                        <p><i class="fas fa-envelope"></i> spin@neon.com</p>
+                        <p><i class="fas fa-key"></i> Encrypted Comms: N3ON-SP1N-2025</p>
                         <p><i class="fas fa-map-marker-alt"></i> Neon District, Grid 47</p>
                         <div class="social-links">
                             <a href="#" class="neon-social"><i class="fab fa-discord"></i></a>
@@ -281,7 +297,7 @@
                         <a href="#">CORPORATE</a>
                     </div>
                     <div class="footer-copy">
-                        &copy; 2089 NEON UNDERWORLD. ALL RIGHTS RESERVED.
+                        &copy; 2025 NEON SPIN. ALL RIGHTS RESERVED.
                     </div>
                 </div>
             </div>
